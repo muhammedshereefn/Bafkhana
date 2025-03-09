@@ -57,7 +57,7 @@ a:hover {
   @media (min-width: 992px) {
     .boxed-page .section-padding {
       padding-top: 130px;
-      padding-bottom: 130px; } }
+      padding-bottom: 1px; } }
 
 @media (min-width: 1200px) {
   .boxed-page {
@@ -172,6 +172,7 @@ a:hover {
 .hero-carousel .owl-item img {
   height: 600px;
   object-fit: cover;
+  border-radius: 15px;
   max-width: 100%; }
   @media (min-width: 992px) {
     .hero-carousel .owl-item img {
