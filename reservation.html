@@ -122,127 +122,98 @@
                 <div class="section-content bg-white p-5 shadow">
                     <div class="heading-section text-center">
                         <span class="subheading">
-                            Reservation
+                            Send
                         </span>
                         <h2>
-                            Book Now
+                            Your Feedback
                         </h2>
                     </div>
-                    <form method="post" name="contact-us" action="">
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" placeholder="Date" />
-                                    <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                                        <div class="input-group-text">
-                                            <span class="lnr lnr-calendar-full"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 form-group">
-                                <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" placeholder="Time" />
-                                    <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
-                                        <div class="input-group-text">
-                                            <span class="lnr lnr-clock"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 form-group">
-                                <select class="form-control" id="selectPerson">
-                                    <option></option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                 
-                            <div class="col-md-12 form-group">
-                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message ..."></textarea>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <button class="btn btn-primary btn-shadow btn-lg" type="submit" name="submit">Send Message</button>
-                            </div>
+                    <form id="whatsappForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Feedback..." required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" onclick="sendWhatsApp()">Send Feedback</button>
                         </div>
                     </form>
+                    
+                    <script>
+                    function sendWhatsApp() {
+                        let name = document.getElementById("name").value;
+                        let message = document.getElementById("message").value;
+                        
+                        let whatsappMessage = `Feedback from: ${name}%0A%0A${message}`;
+                        let whatsappUrl = `https://wa.me/7591902596?text=${whatsappMessage}`;
+                        
+                        window.open(whatsappUrl, "_blank");
+                    }
+                    </script>
+                    
                 </div>
             </div>
         </div>
         
     </div>
 </section>
-<!-- End of Reservation Section -->		<footer class="mastfoot pb-5 bg-white section-padding pb-0">
-    <div class="inner container">
-         <div class="row">
-         	<div class="col-lg-4">
-         		<div class="footer-widget pr-lg-5 pr-0">
-         			<img src="img/logo.png" class="img-fluid footer-logo mb-3" alt="">
-	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni, et voluptatum dolorem.</p>
-	         		<nav class="nav nav-mastfoot justify-content-start">
-		                <a class="nav-link" href="#">
-		                	<i class="fab fa-facebook-f"></i>
-		                </a>
-		                <a class="nav-link" href="#">
-		                	<i class="fab fa-twitter"></i>
-		                </a>
-		                <a class="nav-link" href="#">
-		                	<i class="fab fa-instagram"></i>
-		                </a>
-		            </nav>
-         		</div>
-         		
-         	</div>
-         	<div class="col-lg-4">
-         		<div class="footer-widget px-lg-5 px-0">
-         			<h4>Open Hours</h4>
-	         		<ul class="list-unstyled open-hours">
-		                <li class="d-flex justify-content-between"><span>Monday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Tuesday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Wednesday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Thursday</span><span>9:00 - 24:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Friday</span><span>9:00 - 02:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Saturday</span><span>9:00 - 02:00</span></li>
-		                <li class="d-flex justify-content-between"><span>Sunday</span><span> Closed</span></li>
-		              </ul>
-         		</div>
-         		
-         	</div>
-
-         	<div class="col-lg-4">
-         		<div class="footer-widget pl-lg-5 pl-0">
-         			<h4>Newsletter</h4>
-	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-	         		<form id="newsletter">
-						<div class="form-group">
-							<input type="email" class="form-control" id="emailNewsletter" aria-describedby="emailNewsletter" placeholder="Enter email">
-						</div>
-						<button type="submit" class="btn btn-primary w-100">Submit</button>
-					</form>
-         		</div>
-         		
-         	</div>
-         	<div class="col-md-12 d-flex align-items-center">
-         		<p class="mx-auto text-center mb-0">Copyright 2025. All Right Reserved. Bafkhana Cuisine</p>
-         	</div>
+<!-- End of Reservation Section -->	
+<footer class="mastfoot pb-5 bg-white section-padding">
+    <div class="container">
+        <div class="row justify-content-center text-center">
             
+            <!-- Logo & Social Media -->
+            <div class="col-lg-4 mb-4 mb-lg-0 text-lg-start">
+                <div class="footer-widget">
+                    <img src="img/logo.png" class="img-fluid footer-logo mb-3" alt="Bafkhana Logo">
+                    <p>Follow Bafkhana on Instagram for exciting updates and mouthwatering videos!</p>
+                    <nav class="nav nav-mastfoot justify-content-start">
+                        <a class="nav-link" href="https://www.instagram.com/bafkhana_kochi/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="nav-link" href="https://www.instagram.com/bafkhana_kochi/"><i class="fab fa-twitter"></i></a>
+                        <a class="nav-link" href="https://www.instagram.com/bafkhana_kochi/"><i class="fab fa-instagram"></i></a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Open Hours -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="footer-widget">
+                    <h4 class="mb-3">Open Hours</h4>
+                    <ul class="list-unstyled open-hours">
+                        <li class="d-flex justify-content-between"><span>Monday</span><span>7:00 AM - 2:00 AM</span></li>
+                        <li class="d-flex justify-content-between"><span>Tuesday</span><span>7:00 AM - 2:00 AM</span></li>
+                        <li class="d-flex justify-content-between"><span>Wednesday</span><span>7:00 AM - 2:00 AM</span></li>
+                        <li class="d-flex justify-content-between"><span>Thursday</span><span>7:00 AM - 2:00 AM</span></li>
+                        <li class="d-flex justify-content-between"><span>Friday</span><span>7:00 AM - 2:00 AM</span></li>
+                        <li class="d-flex justify-content-between"><span>Saturday</span><span>7:00 AM - 2:00 AM</span></li>
+                        <li class="d-flex justify-content-between"><span>Sunday</span><span>7:00 AM - 2:00 AM</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-lg-4 text-lg-start">
+                <div class="footer-widget">
+                    <h4 class="mb-3">Contact Us</h4>
+                    <p class="mb-1"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-phone-alt me-2"></i> +91 87654 32109</p>
+                </div>
+            </div>
+
         </div>
+
+        <!-- Copyright -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <p class="text-center mb-0">&copy; 2025 Bafkhana Cuisine. All Rights Reserved.</p>
+            </div>
+        </div>
+
     </div>
-</footer>	</div>
+</footer>	
+
+</div>
 	
 </div>
 	<!-- External JS -->
